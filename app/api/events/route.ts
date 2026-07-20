@@ -5,6 +5,12 @@ import Event from "@/database/event.model";
 import connectDB from "@/lib/mongodb";
 
 
+/**
+ * Creates an event from multipart form data and uploads its image.
+ *
+ * @param req - The request containing event fields, tags, agenda, and an image file
+ * @returns A response containing the created event or an error message
+ */
 export async function POST(req: NextRequest) {
     try {
         await connectDB();
@@ -52,6 +58,11 @@ export async function POST(req: NextRequest) {
     }
 }
 
+/**
+ * Retrieves all events, ordered from newest to oldest.
+ *
+ * @returns A response containing the events or an error message.
+ */
 export async function GET() {
     try {
         await connectDB();

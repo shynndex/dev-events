@@ -7,7 +7,12 @@ type RouteParams = {
 }
 
 // GET /api/events/[slug]
-// Fetches a single event by its slug
+/**
+ * Retrieves an event identified by its URL slug.
+ *
+ * @param params - Route parameters containing the event slug.
+ * @returns A successful event response, or an error response with status 400, 404, or 500.
+ */
 
 export async function GET(
     req: NextRequest,
